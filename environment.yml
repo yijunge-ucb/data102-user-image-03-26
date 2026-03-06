@@ -1,0 +1,38 @@
+name: data102-SP25
+
+channels:
+- conda-forge
+- pytorch
+
+dependencies:
+  # other pacakges
+  - bambi==0.15.0
+  - graphviz==13.1.1
+  - ipywidgets==8.1.7
+  - jinja2==3.1.6
+  - jupyterlab-favorites==3.2.2
+  - jupyterlab_server==2.27.3
+  - jupyterlab_widgets==3.0.15
+  - markupsafe==3.0.2
+  - nbformat==5.10.4
+  - nbresuse==0.4.0
+  - pandoc==3.1.3
+
+  # data102, Fall 2023, https://github.com/berkeley-dsep-infra/datahub/issues/5037
+  - pymc==5.25.1
+  - python-graphviz==0.20.1
+
+  # fall 2023:  https://github.com/berkeley-dsep-infra/datahub/issues/5130
+  - cpuonly==2.0
+  - pytorch==2.1.0
+  - torchaudio==2.1.0
+  - torchvision==0.16.0
+
+  - pip:
+    # disable until fixed (probably this:  https://github.com/jupyterlab/jupyter-collaboration/issues/162)
+    # DH-418, 2024-01-16, above issue still not fixed.  Also this package is available in condaforge
+    # - jupyter_collaboration==1.0.1
+    - nb2pdf==0.6.2
+    - nbpdfexport==0.2.1
+    - git+https://github.com/shaneknapp/python-popularity-contest.git@add-error-handling
+
