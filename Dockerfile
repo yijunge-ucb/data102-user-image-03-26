@@ -1,4 +1,4 @@
-FROM us-central1-docker.pkg.dev/ucb-datahub-2018/testing/base-python-image:v0.0.3
+FROM us-central1-docker.pkg.dev/ucb-datahub-2018/base-images-repo/base-python-image:bb2e6c6
 
 USER root
 
@@ -34,6 +34,8 @@ RUN mamba env update -n notebook -f /tmp/environment.yml && \
 USER root
 RUN rm -rf /tmp/*
 
+ENV REPO_DIR=/srv/repo
+COPY --chown=${NB_USER}:${NB_USER} image-tests ${REPO_DIR}/image-tests
 
 
 USER ${NB_USER}
@@ -43,5 +45,3 @@ WORKDIR /home/${NB_USER}
 EXPOSE 8888
 
 ENTRYPOINT ["tini", "--"]
-
-
