@@ -21,7 +21,7 @@ dependencies:
   - torchaudio==2.1.0
   - torchvision==0.16.0
   # DH-664, requested by Silas
-  - arviz
+  - arviz==0.23.4
   
 
   - pip:
